@@ -11,7 +11,6 @@ const ToDo = () => {
     setTodos([...todos, inputValue])
     setInputValue("")
   }
-
   const handleDelete = (index) => {
     const updateTodos = todos.filter((todos, i) => i !== index)
     setTodos(updateTodos)
@@ -28,7 +27,9 @@ const ToDo = () => {
         {
           todos.length > 0 ? todos.map((todo, index) => {
             return (
-              <li key={index}>{todo}<button className='btn-delete' onClick={() => { handleDelete(index) }}>Delete</button></li>
+              <li key={index}>
+                {todo} <button className='btn-delete' onClick={() => { handleDelete(index) }}>Delete</button>
+              </li>
             )
           })
             :
